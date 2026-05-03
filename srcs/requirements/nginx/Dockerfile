@@ -1,9 +1,15 @@
-FROM alpine:3.22 
+FROM alpine:3.22
 
-RUN apk update && apk add nginx openssl bash
+RUN apk update && apk add --no-cache \
+    nginx \
+    openssl \
+    bash
 
-COPY tools/nginx-entrypoint.sh /usr/local/bin/
+RUN mkdir -p /etc/nginx/ssl /var/www/html /run/nginx
 
-RUN chmod +x /usr/local/bin/nginx-entrypoint.sh && mkdir -p /etc/nginx/ssl
+COPY tools/nginx-entrypoint.sh /usr/local/bin/nginx-entrypoint.sh
+RUN chmod +x /usr/local/bin/nginx-entrypoint.sh
 
-ENTRYPOINT [ "nginx-entrypoint.sh" ]
+EXPOSE 443
+
+ENTRYPOINT ["nginx-entrypoint.sh"]
