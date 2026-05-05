@@ -46,3 +46,7 @@ AI assistance (Claude) was used to:
 
 Every line of the resulting code was reviewed and tested manually; no
 AI-generated content is included that I cannot explain.
+
+## Documentation
+- [User Guide](USER_DOC.md)
+- [Developer Guide](DEV_DOC.md)
