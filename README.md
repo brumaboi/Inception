@@ -1,6 +1,6 @@
 *This project has been created as part of the 42 curriculum by sbruma*
 
-## Description**
+## Description
 
 Inception sets up a small WordPress infrastructure inside a virtual machine using Docker Compose. Three containers are built from scratch from an Alpine 3.22 base image (the penultimate stable release):
 
@@ -24,8 +24,8 @@ Host networking shares the host's network stack — every container port is a ho
 Container filesystems are ephemeral. Bind mounts attach a specific host path; named volumes are managed by Docker. The subject requires named volumes *and* data under `/home/login/data`, so we declare named volumes that use the `local` driver with `o=bind` options — a Docker-managed volume backed by a known host path.
 
 ## Instructions
-Build and start everything:
-*make*
+Build and start everything:`make`
+
 Other useful targets: `make down`, `make logs`, `make ps`, `make re`, `make fclean` (full wipe including the host data folders).
 
 Open `https://sbruma.42.fr` in a browser.
@@ -36,13 +36,12 @@ Open `https://sbruma.42.fr` in a browser.
 - Alpine Linux package index: https://pkgs.alpinelinux.org/
 - WP-CLI handbook: https://make.wordpress.org/cli/handbook/
 - nginx + php-fpm: https://www.nginx.com/resources/wiki/start/topics/examples/phpfastcgionnginx/
-- 42 peers' shared repositories and notes on the Inception subject.
+- 42 peers' shared repositories and notes on the Inception subject. (especially: https://github.com/Vikingu-del/Inception-Guide)
 
 ### How AI was used
 AI assistance (Claude) was used to:
 - Cross-check the subject requirements against the configuration files.
 - Draft the structure of this README and the user/developer docs.
-
 
 Every line of the resulting code was reviewed and tested manually; no
 AI-generated content is included that I cannot explain.
