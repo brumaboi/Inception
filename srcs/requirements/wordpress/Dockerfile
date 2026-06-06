@@ -22,6 +22,8 @@ RUN apk update && apk add --no-cache \
     php82-session \
     php82-ctype
 
+RUN ln -s /usr/bin/php82 /usr/bin/php
+
 RUN curl -fsSL -o /usr/local/bin/wp \
         https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp
