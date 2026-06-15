@@ -1,28 +1,28 @@
-FROM alpine:3.22
+FROM alpine:3.23
 
 RUN apk update && apk add --no-cache \
     bash \
     curl \
     mariadb-client \
-    php82 \
-    php82-fpm \
-    php82-mysqli \
-    php82-json \
-    php82-curl \
-    php82-dom \
-    php82-exif \
-    php82-fileinfo \
-    php82-mbstring \
-    php82-openssl \
-    php82-xml \
-    php82-zip \
-    php82-phar \
-    php82-iconv \
-    php82-tokenizer \
-    php82-session \
-    php82-ctype
+    php83 \
+    php83-fpm \
+    php83-mysqli \
+    php83-json \
+    php83-curl \
+    php83-dom \
+    php83-exif \
+    php83-fileinfo \
+    php83-mbstring \
+    php83-openssl \
+    php83-xml \
+    php83-zip \
+    php83-phar \
+    php83-iconv \
+    php83-tokenizer \
+    php83-session \
+    php83-ctype
 
-RUN ln -s /usr/bin/php82 /usr/bin/php
+RUN ln -s /usr/bin/php83 /usr/bin/php
 
 RUN curl -fsSL -o /usr/local/bin/wp \
         https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \

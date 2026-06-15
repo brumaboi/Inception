@@ -6,8 +6,8 @@ export WP_CLI_PHP_ARGS='-d memory_limit=512M'
 cd /var/www/html
 
 if [ ! -e /etc/.firstrun ]; then
-    sed -i 's|listen = 127.0.0.1:9000|listen = 9000|g' /etc/php82/php-fpm.d/www.conf
-    sed -i 's|^memory_limit = .*|memory_limit = 512M|g' /etc/php82/php.ini
+    sed -i 's|listen = 127.0.0.1:9000|listen = 9000|g' /etc/php83/php-fpm.d/www.conf
+    sed -i 's|^memory_limit = .*|memory_limit = 512M|g' /etc/php83/php.ini
     touch /etc/.firstrun
 fi
 
@@ -54,4 +54,4 @@ if [ ! -e .firstmount ]; then
     touch .firstmount
 fi
 
-exec /usr/sbin/php-fpm82 -F
+exec /usr/sbin/php-fpm83 -F
